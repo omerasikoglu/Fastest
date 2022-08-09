@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridSystem : MonoBehaviour {
+public class GridSystem {
 
 
     private int width;
@@ -30,7 +30,7 @@ public class GridSystem : MonoBehaviour {
     }
 
     public Vector3 GetWorldPosition(GridPosition gridPosition) {
-        return new Vector3(gridPosition.x, 0, gridPosition.z) * cellSize;
+        return new Vector3(gridPosition.x, 0.01f, gridPosition.z) * cellSize;
     }
 
     public GridPosition GetGridPosition(Vector3 worldPosition) {
@@ -45,7 +45,7 @@ public class GridSystem : MonoBehaviour {
             for (int z = 0; z < height; z++) {
 
                 GridPosition gridPosition = new GridPosition(x,z);
-                Transform debugTransform = Instantiate(pfDebug, GetWorldPosition(gridPosition), Quaternion.identity);
+                Transform debugTransform = Object.Instantiate(pfDebug, GetWorldPosition(gridPosition), Quaternion.identity);
                 GridDebugObject gridDbugObkject = debugTransform.GetComponent<GridDebugObject>();
                 gridDbugObkject.SetGridObject(gridObjectArray[x, z]);
             }
