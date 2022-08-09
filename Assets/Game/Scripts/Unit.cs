@@ -9,6 +9,11 @@ public class Unit : MonoBehaviour {
     public void Awake() {
         targetPosition = transform.position;
     }
+
+    public void Start() {
+        GridPosition gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
+        LevelGrid.Instance.SetUnitAtGridPosition(gridPosition, this);
+    }
     public void Update() {
 
         float stoppingDistance = .1f;

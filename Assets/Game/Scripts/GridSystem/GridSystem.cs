@@ -30,7 +30,8 @@ public class GridSystem {
     }
 
     public Vector3 GetWorldPosition(GridPosition gridPosition) {
-        return new Vector3(gridPosition.x, 0.01f, gridPosition.z) * cellSize;
+        float yHeight = .01f;
+        return new Vector3(gridPosition.x, yHeight, gridPosition.z) * cellSize;
     }
 
     public GridPosition GetGridPosition(Vector3 worldPosition) {
@@ -44,10 +45,10 @@ public class GridSystem {
         for (int x = 0; x < width; x++) {
             for (int z = 0; z < height; z++) {
 
-                GridPosition gridPosition = new GridPosition(x,z);
+                GridPosition gridPosition = new GridPosition(x, z);
                 Transform debugTransform = Object.Instantiate(pfDebug, GetWorldPosition(gridPosition), Quaternion.identity);
-                GridDebugObject gridDbugObkject = debugTransform.GetComponent<GridDebugObject>();
-                gridDbugObkject.SetGridObject(gridObjectArray[x, z]);
+                GridDebugObject gridDebugObject = debugTransform.GetComponent<GridDebugObject>();
+                gridDebugObject.SetGridObject(gridObjectArray[x, z]);
             }
         }
     }
