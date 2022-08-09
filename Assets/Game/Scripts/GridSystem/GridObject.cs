@@ -1,27 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GridObject {
 
     private GridSystem gridSystem;
     private GridPosition gridPosition;
-    private Unit unit;
+    private List<Unit> unitList;
 
     public GridObject(GridSystem gridSystem, GridPosition gridPosition) {
 
         this.gridSystem = gridSystem;
         this.gridPosition = gridPosition;
+        unitList = new List<Unit>();
     }
 
-    public void SetUnit(Unit unit) {
-        this.unit = unit;
+    public void AddUnit(Unit unit) {
+        unitList.Add(unit);
     }
-    public Unit GetUnit() => unit;
 
+    public void RemoveUnit(Unit unit) {
+        unitList.Remove(unit);
+    }
+
+    public List<Unit> GetUnitList()
+    {
+        return unitList;
+    }
     public override string ToString() {
-        return $" <color=yellow>{gridPosition}</color>\n <color=red>{unit}</color>";
-        //return gridPosition.ToString() + "\n" + unit;
+
+        string result = string.Empty;
+        foreach (Unit unit in unitList) {
+            result += $" <color=yellow>{gridPosition}</color>\n <color=red>{unit}</color>\n";
+        }
+        return $" <color=yellow>{gridPosition}</color>\n{result}";
+
+        //string result2 = unitList.Aggregate(string.Empty,
+        //    (o, next) => o + $" <color=yellow>{gridPosition}</color>\n <color=red>{unit}</color>\n",
+        //    o => o.ToUpper());
+        //return $" <color=yellow>{gridPosition}</color>\n{result2}";
     }
 
 
