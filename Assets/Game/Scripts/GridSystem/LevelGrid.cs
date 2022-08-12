@@ -10,7 +10,7 @@ public class LevelGrid : MonoBehaviour {
     private GridSystem gridSystem;
     public void Awake() {
         Instance = this;
-        gridSystem = new GridSystem(10, 10, 2f);
+        gridSystem = new GridSystem(10, 10, 3f);
         gridSystem.CreateDebugObjects(pfGridDebugObject);
     }
 

@@ -23,8 +23,6 @@ public class GridSystem {
                 GridPosition gridPosition = new GridPosition(x, z);
                 gridObjectArray[x, z] = new GridObject(this, gridPosition);
 
-                //float drawLength = .2f;
-                //Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x, z) + Vector3.right * drawLength, Color.white, 1000f);
             }
         }
     }
