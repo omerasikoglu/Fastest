@@ -25,20 +25,25 @@ public class MoveAction : MonoBehaviour {
     }
 
     public void Move(Vector3 targetPosition) {
-        Vector3 groundHeight = new Vector3(0f, .5f, .5f);
+        Vector3 groundHeight = new Vector3(0f, .5f, 0f);
         this.targetPosition = targetPosition + groundHeight;
     }
 
     public List<GridPosition> GetValidActionGridPositionList() {
 
         List<GridPosition> validGridPositionList = new List<GridPosition>();
-        GridPosition unitGridPosition = unit.GetGridPosition();
+        GridPosition unitGridPos = unit.GetGridPosition();
 
         for (int x = -maxMoveDistance; x < maxMoveDistance + 1; x++) {
             for (int z = -maxMoveDistance; z < maxMoveDistance + 1; z++) {
                 GridPosition offsetGridPos = new GridPosition(x, z);
-                GridPosition testGridPos = offsetGridPos + unitGridPosition;
-                Debug.Log(offsetGridPos);
+                GridPosition testGridPos = offsetGridPos + unitGridPos;
+
+                if (!LevelGrid.Instance.IsValidGridPosition(testGridPos)) continue;
+                if (unitGridPos == testGridPos) continue;
+                if (LevelGrid.Instance.HasAnyObjectInGridPosition(testGridPos)) continue;
+
+                Debug.Log(testGridPos);
             }
         }
 

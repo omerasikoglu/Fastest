@@ -24,10 +24,13 @@ public class GridObject {
         unitList.Remove(unit);
     }
 
-    public List<Unit> GetUnitList()
-    {
+    public List<Unit> GetUnitList() {
         return unitList;
     }
+
+    public bool HasAnyUnit() => unitList.Count > 0;
+
+
     public override string ToString() {
 
         string result = string.Empty;

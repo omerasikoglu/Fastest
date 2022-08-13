@@ -10,7 +10,7 @@ public class LevelGrid : MonoBehaviour {
     private GridSystem gridSystem;
     public void Awake() {
         Instance = this;
-        gridSystem = new GridSystem(10, 10, 3f);
+        gridSystem = new GridSystem(3, 3, 5f);
         gridSystem.CreateDebugObjects(pfGridDebugObject);
     }
 
@@ -30,7 +30,7 @@ public class LevelGrid : MonoBehaviour {
     }
 
     public void UnitMoved(Unit unit, GridPosition from, GridPosition to) {
-        RemoveUnitAtGridPosition(from,unit);
+        RemoveUnitAtGridPosition(from, unit);
         AddUnitAtGridPosition(to, unit);
     }
 
@@ -38,5 +38,13 @@ public class LevelGrid : MonoBehaviour {
     public GridPosition GetGridPosition(Vector3 worldPosition) {
         return gridSystem.GetGridPosition(worldPosition);
     }
+
+    public bool IsValidGridPosition(GridPosition gridPosition) => gridSystem.IsValidGridPosition(gridPosition);
+
+    public bool HasAnyObjectInGridPosition(GridPosition gridPosition) {
+        GridObject gridObject = gridSystem.GetGridObject(gridPosition);
+        return gridObject.HasAnyUnit();
+    }
+
 
 }
