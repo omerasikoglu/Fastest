@@ -8,9 +8,14 @@ public class LevelGrid : MonoBehaviour {
 
     [SerializeField] private Transform pfGridDebugObject;
     private GridSystem gridSystem;
+
+    [SerializeField] private int width = 3;
+    [SerializeField] private int height = 3;
+    [SerializeField] private float cellSize = 5;
+
     public void Awake() {
         Instance = this;
-        gridSystem = new GridSystem(3, 3, 5f);
+        gridSystem = new GridSystem(width, height, cellSize);
         gridSystem.CreateDebugObjects(pfGridDebugObject);
     }
 
@@ -39,9 +44,8 @@ public class LevelGrid : MonoBehaviour {
         return gridSystem.GetGridPosition(worldPosition);
     }
 
-    public Vector3 GetWorldPosition(GridPosition gridPosition)
-    {
-       return gridSystem.GetWorldPosition(gridPosition);
+    public Vector3 GetWorldPosition(GridPosition gridPosition) {
+        return gridSystem.GetWorldPosition(gridPosition);
     }
 
     public bool IsValidGridPosition(GridPosition gridPosition) => gridSystem.IsValidGridPosition(gridPosition);
@@ -51,5 +55,8 @@ public class LevelGrid : MonoBehaviour {
         return gridObject.HasAnyUnit();
     }
 
+    public int GetWidth() => width;
+    public int GetHeight() => height;
+    public float GetCellSize() => cellSize;
 
 }
