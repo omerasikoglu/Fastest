@@ -17,11 +17,17 @@ public class UnitActionSystem : MonoBehaviour {
         Instance = this;
     }
     public void Update() {
+        CheckMouseClick(); void CheckMouseClick() {
+            if (Input.GetMouseButtonDown(0)) {
+                if (TryHandleUnitSelection()) return; //try to pick unit if not picked chosen unit will be move
 
-        if (Input.GetMouseButtonDown(0)) {
-            if (TryHandleUnitSelection()) return;
-            selectedUnit.GetMoveAction().Move(MouseWorld.GetPosition());
+                GridPosition mouseGridPosition = LevelGrid.Instance.GetGridPosition(MouseWorld.GetPosition());
+                if (selectedUnit.GetMoveAction().IsValidActionToGridPosition(mouseGridPosition)) {
+                    selectedUnit.GetMoveAction().Move(mouseGridPosition);
+                }
+            }
         }
+
     }
     private bool TryHandleUnitSelection() {
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
