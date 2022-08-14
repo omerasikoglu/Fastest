@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class Test : MonoBehaviour {
@@ -10,7 +11,13 @@ public class Test : MonoBehaviour {
     }
     public void Update() {
         if (Input.GetKeyDown(KeyCode.X)) {
-            unit.GetMoveAction().GetValidActionGridPositionList();
+            xPressed();
         }
     }
+
+    [Button]
+    private void xPressed() {
+        GridSystemVisual.Instance.Update();
+    }
+
 }

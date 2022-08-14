@@ -37,7 +37,7 @@ public class GridObject {
         foreach (Unit unit in unitList) {
             result += $" <b><color=blue>{gridPosition}</color>\n <color=red>{unit}</color></b>\n";
         }
-        return $" <color=black  >{gridPosition}</color>\n{result}";
+        return $" <color=black>{gridPosition}</color>\n{result}";
 
         //string result2 = unitList.Aggregate(string.Empty,
         //    (o, next) => o + $" <color=yellow>{gridPosition}</color>\n <color=red>{unit}</color>\n",

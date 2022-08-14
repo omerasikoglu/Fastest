@@ -9,8 +9,8 @@ public class LevelGrid : MonoBehaviour {
     [SerializeField] private Transform pfGridDebugObject;
     private GridSystem gridSystem;
 
-    [SerializeField] private int width = 3;
-    [SerializeField] private int height = 3;
+    [SerializeField] private int width = 4;
+    [SerializeField] private int height = 4;
     [SerializeField] private float cellSize = 5;
 
     public void Awake() {

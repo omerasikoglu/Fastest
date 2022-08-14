@@ -44,7 +44,7 @@ public class MoveAction : MonoBehaviour {
         for (int x = -maxMoveDistance; x < maxMoveDistance + 1; x++) {
             for (int z = -maxMoveDistance; z < maxMoveDistance + 1; z++) {
                 GridPosition offsetGridPos = new GridPosition(x, z);
-                GridPosition testGridPos = offsetGridPos + unitGridPos;
+                GridPosition testGridPos = unitGridPos + offsetGridPos;
 
                 if (!LevelGrid.Instance.IsValidGridPosition(testGridPos)) continue;
                 if (LevelGrid.Instance.HasAnyObjectInGridPosition(testGridPos)) continue;
