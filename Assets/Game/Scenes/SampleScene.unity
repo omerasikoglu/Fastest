@@ -437,6 +437,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e39712950a40c468f39d43899b9e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfWorldAssetReference:
+    m_AssetGUID: a6b57f84239dee24586f806fe127a3b6
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  pfWorldAssetReferenceGameObject:
+    m_AssetGUID: a6b57f84239dee24586f806fe127a3b6
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  pfWorldAssetLabelReference:
+    m_LabelString: World
 --- !u!4 &1843771866
 Transform:
   m_ObjectHideFlags: 0

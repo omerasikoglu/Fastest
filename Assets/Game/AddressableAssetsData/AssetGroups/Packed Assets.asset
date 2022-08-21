@@ -16,15 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: ce97c258729c8004b8320984b17799d4
-  m_SerializeEntries:
-  - m_GUID: a6b57f84239dee24586f806fe127a3b6
-    m_Address: Assets/Game/Prefabs/pfWorld.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 88b73f6d74291e941b86716c5d5cef8e
-    m_Address: Assets/Game/Prefabs/pfSystems.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 2edf0fe166f61d244896923444b1db1e, type: 2}
   m_SchemaSet:
