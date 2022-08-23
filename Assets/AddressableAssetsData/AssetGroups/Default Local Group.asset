@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: 5a8b92ef7663e91439568c264bded45b
+  m_GUID: 7134696bd8f9b9548a32fd2d41bb636f
   m_SerializeEntries:
   - m_GUID: a6b57f84239dee24586f806fe127a3b6
     m_Address: Assets/Game/Prefabs/pfWorld.prefab

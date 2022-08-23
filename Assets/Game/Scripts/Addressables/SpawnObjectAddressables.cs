@@ -22,8 +22,8 @@ public class SpawnObjectAddressables : MonoBehaviour {
         //Method1();
         //Method2();
         //Method3();
-        //Method4();
-        Method5();
+        Method4();
+        //Method5();
     }
 
     private void Method5() {
