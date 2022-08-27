@@ -23,6 +23,7 @@ public class UnitActionSystem : MonoBehaviour {
 
                 if (TryHandleUnitSelection()) return; //try to pick unit if not picked chosen unit will be move
                 if (selectedUnit == null) return;
+
                 GridPosition mouseGridPosition = LevelGrid.Instance.GetGridPosition(MouseWorld.GetPosition());
                 if (selectedUnit.GetMoveAction().IsValidActionToGridPosition(mouseGridPosition)) {
                     selectedUnit.GetMoveAction().Move(mouseGridPosition);

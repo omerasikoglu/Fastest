@@ -13,6 +13,7 @@ public class MouseWorld : MonoBehaviour {
 
     private void Awake() {
         instance = this;
+        //cam ??= Camera.main;
     }
 
     public static Vector3 GetPosition() {
