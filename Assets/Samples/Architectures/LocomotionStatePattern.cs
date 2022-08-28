@@ -24,6 +24,24 @@ public class LocomotionStatePattern : MonoBehaviour, LocomotionContext {
     public void SetState(LocomotionState newState) {
         currentState = newState;
     }
+    public void Update() {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            Crouch();
+            Debug.Log("Crouch " + currentState);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            Fall();
+            Debug.Log("Fall " + currentState);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3)) {
+            Jump();
+            Debug.Log("Jump " + currentState);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4)) {
+            Land();
+            Debug.Log("Land " + currentState);
+        }
+    }
 }
 
 public class GroundedState : LocomotionState {
