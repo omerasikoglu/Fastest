@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf90d2b63a6a93b458f9c53d79331d2e, type: 3}
   m_Name: GallItemData
   m_EditorClassIdentifier: 
-  ItemID: 
+  ItemID: Gall
+  item: 1
+  pf: {fileID: 8532957513487595017, guid: 8577440f53ef7e445b80d3f464b9c188, type: 3}

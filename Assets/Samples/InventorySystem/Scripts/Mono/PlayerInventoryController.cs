@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace InventorySystem {
     public class PlayerInventoryController : MonoBehaviour {
-        [SerializeField] private AbstractPlayerInventoryItemData[] playerInventoryItemDataArray;
-
+        [SerializeField] private AbstractPlayerInventoryItemBaseSO[] playerInventoryItemDataArray;
+        public Transform Parent;
         public void Start() {
             InitializeInventory();
         }
